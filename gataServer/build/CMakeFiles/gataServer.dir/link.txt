@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/gataServer.dir/gate_server.cpp.o CMakeFiles/gataServer.dir/src/c_server.cpp.o CMakeFiles/gataServer.dir/src/http_connection.cpp.o CMakeFiles/gataServer.dir/src/logic_system.cpp.o -o ../bin/gataServer  -ljsoncpp 
