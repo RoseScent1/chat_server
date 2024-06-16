@@ -1,6 +1,0 @@
-nohup: ignoring input
-[/usr/src/app/gate_server.cpp:16]	GateServer start!
-[/usr/src/app/src/http_connection.cpp:10]	a peer connected
-[/usr/src/app/src/http_connection.cpp:10]	a peer connected
-[/usr/src/app/src/logic_system.cpp:6]	RegGet,url:/get_test
-[/usr/src/app/src/logic_system.cpp:11]	RegPost,url:/get_varifycode
