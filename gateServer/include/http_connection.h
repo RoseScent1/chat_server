@@ -8,10 +8,10 @@ class HttpConnection : public std::enable_shared_from_this<HttpConnection> {
   friend class LogicSystem;
 
 public:
-  HttpConnection(tcp::socket socket);
+  HttpConnection(net::io_context &);
   // 监听读事件
   auto Start() -> void;
-
+	tcp::socket &GetSocket();
 private:
   // 判断是否超时
   auto CheckDeadline() -> void;

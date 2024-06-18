@@ -10,7 +10,6 @@ public:
 private:
 	tcp::acceptor acceptor_;
 	net::io_context &ioc_;
-	tcp::socket peer_socket_;
 private:
 
 };

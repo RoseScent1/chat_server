@@ -3,8 +3,9 @@
 #include "http_connection.h"
 #include "header.h"
 
-HttpConnection::HttpConnection(tcp::socket socket)
-    : socket_(std::move(socket)) {}
+HttpConnection::HttpConnection(net::io_context &ioc) : socket_(ioc) {}
+
+tcp::socket &HttpConnection::GetSocket() { return socket_; }
 
 auto HttpConnection::Start() -> void {
   DEBUG_LOG_("a peer connected");

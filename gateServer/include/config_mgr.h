@@ -45,10 +45,20 @@ public:
     }
 
     this->_config_map = src._config_map;
-		return *this;
+    return *this;
   };
 
   ConfigMgr(const ConfigMgr &src) { this->_config_map = src._config_map; }
+
+
+	static ConfigMgr &Instance() {
+		static ConfigMgr cfg_mgr;
+		return cfg_mgr;
+	}
+
+private:
+  // 存储section和key-value对的map
+  std::map<std::string, SectionInfo> _config_map;
 
   ConfigMgr() {
     boost::filesystem::path current_path = boost::filesystem::current_path();
@@ -90,8 +100,4 @@ public:
       }
     }
   }
-
-private:
-  // 存储section和key-value对的map
-  std::map<std::string, SectionInfo> _config_map;
 };

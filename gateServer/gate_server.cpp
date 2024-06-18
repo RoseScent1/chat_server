@@ -1,9 +1,9 @@
 #include "c_server.h"
+#include "config_mgr.h"
 #include "header.h"
 #include <cstdint>
-#include "config_mgr.h"
 int main() {
-  ConfigMgr global_config;
+  auto global_config = ConfigMgr::Instance();
   std::string gate_port_str = global_config["GateServer"]["Port"];
   uint16_t port = atoi(gate_port_str.c_str());
   try {

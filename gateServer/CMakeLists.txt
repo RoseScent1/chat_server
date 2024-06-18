@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.8.0)
 project(gateServer VERSION 0.1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 17)
 
-add_compile_options(-std=c++17 -Wall -Werror)
+add_compile_options(-std=c++17 -Wall -Werror -Wno-error=unused-variable)
 
 if(POLICY CMP0079)
 	cmake_policy(SET CMP0079 NEW)
@@ -43,3 +43,4 @@ set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
 add_subdirectory(proto)
+add_subdirectory(redis)

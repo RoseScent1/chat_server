@@ -1,6 +1,21 @@
-## grpc 处理gateServer与Server的通信
-目前只有获取验证码
-gprc 服务端用nodejs实现 `./VerifyServer/config.json`里填写配置信息
-还没加redis和mysql,后续再加
+### 环境
+*c++相关*：
+c++ 17
+grpc 1.64.0
+boost 1.74
+clang++ 14.0.0
+cmake 3.22.1
+redis++ 1.13.12
+*nodejs相关*:
+nodejs 12.22.9
+@grpc/grpc-js 1.10.9   
+@grpc/proto-loader 0.7.13
+express 4.19.2
+nodemailer 6.9.13
+ioredis 5.4.1
+*数据库相关*:
+redis5
 
-客户端c++实现 `./gateServer/config/config.ini`里填写配置信息，目前还未做太多处理，都是127.0.0.1,后续更改
+## grpc 处理gateServer与Server的通信
+客户端发起注册请求后,会发送一个post请求到网关服务器,网关服务器通过rpc调用与处理注册请求服务器通信
+处理注册请求的服务器会生成验证码并发送邮件给用户邮箱,使用redis设置过期时间

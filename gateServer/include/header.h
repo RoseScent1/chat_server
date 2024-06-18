@@ -79,6 +79,3 @@ typename ret_type<is_ok<Args...>::value>::type formatString(const char *format,
 }
 
 inline std::string formatString(const char *format) { return format; }
-
-class ConfigMgr;
-extern ConfigMgr global_config;
